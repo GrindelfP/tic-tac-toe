@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include "communication.h"
-#include "utility.h"
 #define EMPTY_BOARD "\n* * *\n* * *\n* * *"
 #define BOARD_LINE_LENGTH 6
 #define X_SYMBOL 'X'
