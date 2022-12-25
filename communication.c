@@ -8,6 +8,16 @@ void printGreetings() {
     printf("Let us begin!");
 }
 
-void visualizeBoard(gameBoard board) {
-    // IMPLEMENT!
+void visualizeBoard(struct gameBoard board) {
+    int i, j;
+    char *boardLine = board.lineOne;
+    for (j = 0; j < 3; ++j) {
+        printf("\n");
+        for (i = 0; i < 3; ++i) {
+            printf("%c", boardLine[i]);
+            if (i != 2) printf(" ");
+        }
+        if (j == 0) boardLine = board.lineTwo;
+        if (j == 1) boardLine = board.lineThree;
+    }
 }

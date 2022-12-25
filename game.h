@@ -4,27 +4,18 @@
 #include <stdbool.h>
 #include "communication.h"
 #include "gameUtility.h"
-#define BOARD_LINE_LENGTH 6
-#define X_SYMBOL 'X'
-#define O_SYMBOL 'O'
-
-typedef struct moveCoordinates {
-    int x;
-    int y;
-} moveCoordinates;
+#include "gameStructs.h"
 
 void gameQueue();
 
 struct moveCoordinates getPlayerMove();
 
-void completeMove(struct moveCoordinates coordinates, int playerNumber, char *board);
+bool gameContinues(struct gameBoard board);
 
-bool gameContinues(gameBoard board);
+bool lineWin(struct gameBoard board);
 
-bool lineWin(gameBoard board);
+bool columnWin(struct gameBoard board);
 
-bool columnWin(gameBoard board);
-
-bool diagonalWin(gameBoard board);
+bool diagonalWin(struct gameBoard board);
 
 #endif //TIC_TAC_TOE_GAME_H
