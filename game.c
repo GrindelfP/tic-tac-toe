@@ -39,16 +39,16 @@ moveCoordinates getPlayerMove() {
 
 bool gameContinues(gameBoard board) {
     bool continues = true;
+    // check*
     if (lineWin(board) || columnWin(board) || diagonalWin(board)) continues = false;
     return continues;
 }
 
 bool lineWin(gameBoard board) {
     bool gameWon = false;
-    if ((board.lineOne[1] == board.lineOne[2] == board.lineOne[3]) ||
-        (board.lineTwo[1] == board.lineTwo[2] == board.lineTwo[3]) ||
-        (board.lineThree[1] == board.lineThree[2] == board.lineThree[3])) gameWon = true;
-
+    if ((board.lineOne[0] == board.lineOne[1] == board.lineOne[2]) ||
+        (board.lineTwo[0] == board.lineTwo[1] == board.lineTwo[2]) ||
+        (board.lineThree[0] == board.lineThree[1] == board.lineThree[2])) gameWon = true;
     return gameWon;
 }
 
