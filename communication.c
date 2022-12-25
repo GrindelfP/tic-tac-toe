@@ -7,3 +7,7 @@ void printGreetings() {
     printf("%s", rules);
     printf("Let us begin!");
 }
+
+void visualizeBoard(gameBoard board) {
+    // IMPLEMENT!
+}

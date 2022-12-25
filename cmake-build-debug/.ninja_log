@@ -1,8 +1,5 @@
 # ninja log v5
-27	67	1671922825641964298	tic_tac_toe	44acb313280adc56
+35	66	1671974569215482731	tic_tac_toe	44acb313280adc56
 0	27	1671922825601963912	CMakeFiles/tic_tac_toe.dir/communication.c.o	683bf4b4e5cefef
-0	62	1671922817329884467	CMakeFiles/tic_tac_toe.dir/game.c.o	3d044c442b43b353
-0	57	1671922817325884429	CMakeFiles/tic_tac_toe.dir/main.c.o	805dc01bbecdac8d
-0	27	1671924028326443559	CMakeFiles/tic_tac_toe.dir/main.c.o	805dc01bbecdac8d
-0	53	1671924028350443933	CMakeFiles/tic_tac_toe.dir/game.c.o	3d044c442b43b353
-53	90	1671924028386444495	tic_tac_toe	44acb313280adc56
+1	35	1671974569183483181	CMakeFiles/tic_tac_toe.dir/game.c.o	3d044c442b43b353
+0	28	1671974474436016067	CMakeFiles/tic_tac_toe.dir/main.c.o	805dc01bbecdac8d

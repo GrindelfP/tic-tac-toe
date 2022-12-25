@@ -2,21 +2,23 @@
 
 void gameQueue() {
     printGreetings();
-    char board[18] = EMPTY_BOARD;
-    while (gameContinues(board)) {
-        printf("");
-        printf("%s", board);
+    gameBoard board = initBoard();
+    bool continueFlag = true;
+    while (continueFlag) {
+        visualizeBoard(board);
         printf("\nPlayer ONE! Make your move: ");
-        struct moveCoordinates coordinatesA = getPlayerMove();
-        completeMove(coordinatesA, 0, board);
+        moveCoordinates coordinatesA = getPlayerMove();
+        updateBoard(board, coordinatesA, 0);
+        visualizeBoard(board);
         printf("\nNow Player TWO! Make your move: ");
-        struct moveCoordinates coordinatesB = getPlayerMove();
-        completeMove(coordinatesB, 1, board);
+        moveCoordinates coordinatesB = getPlayerMove();
+        updateBoard(board, coordinatesA, 0);
         printf("\nAlea iacta est!\n");
+        continueFlag = gameContinues(board);
     }
 }
 
-void completeMove(struct moveCoordinates coordinates, int playerNumber, char *board) {
+void completeMove(moveCoordinates coordinates, int playerNumber, char *board) {
     int x = coordinates.x - '0' - 1, y = coordinates.y - '0' - 1;
     char playableSymbol;
     if (playerNumber == 0) playableSymbol = O_SYMBOL;
@@ -25,41 +27,42 @@ void completeMove(struct moveCoordinates coordinates, int playerNumber, char *bo
     board[finalCoordinate] = playableSymbol;
 }
 
-struct moveCoordinates getPlayerMove() {
-    struct moveCoordinates coordinates;
+moveCoordinates getPlayerMove() {
+    moveCoordinates coordinates;
     char input[2];
     scanf("%s", input);
-    coordinates.x = input[0];
-    coordinates.y = input[1];
+    coordinates.x = input[0] - '0';
+    coordinates.y = input[1] - '0';
 
     return coordinates;
 }
 
-
-bool gameContinues(const char *board) {
-    bool continues = false;
-    if (lineWin(board) || columnWin(board) || diagonalWin(board)) continues = true;
+bool gameContinues(gameBoard board) {
+    bool continues = true;
+    if (lineWin(board) || columnWin(board) || diagonalWin(board)) continues = false;
     return continues;
 }
 
-bool lineWin(const char *board) {
+bool lineWin(gameBoard board) {
     bool gameWon = false;
-    for (int i = 1; i < 18; i += 6) {
-        if (board[i] == board[i + 3] == board[i + 5]) gameWon = true;
+    if ((board.lineOne[1] == board.lineOne[2] == board.lineOne[3]) ||
+        (board.lineTwo[1] == board.lineTwo[2] == board.lineTwo[3]) ||
+        (board.lineThree[1] == board.lineThree[2] == board.lineThree[3])) gameWon = true;
+
+    return gameWon;
+}
+
+bool columnWin(gameBoard board) {
+    bool gameWon = false;
+    for (int i = 0; i < 3; ++i) {
+        if (board.lineOne[i] == board.lineTwo[i] == board.lineThree[i]) gameWon = true;
     }
     return gameWon;
 }
 
-bool columnWin(const char *board) {
+bool diagonalWin(gameBoard board) {
     bool gameWon = false;
-    for (int i = 1; i < 4; ++i) {
-        if (board[i] == board[i + 6] == board[i + 12]) gameWon = true;
-    }
-    return gameWon;
-}
-
-bool diagonalWin(const char *board) {
-    bool gameWon = false;
-    if ((board[1] == board[9] == board[17]) || (board[6] == board[9] == board[13])) gameWon = true;
+    if ((board.lineOne[0] == board.lineTwo[1] == board.lineThree[2]) ||
+        (board.lineOne[2] == board.lineTwo[1] == board.lineThree[0])) gameWon = true;
     return gameWon;
 }

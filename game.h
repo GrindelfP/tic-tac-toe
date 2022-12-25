@@ -3,15 +3,15 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include "communication.h"
-#define EMPTY_BOARD "\n* * *\n* * *\n* * *"
+#include "gameUtility.h"
 #define BOARD_LINE_LENGTH 6
 #define X_SYMBOL 'X'
 #define O_SYMBOL 'O'
 
-struct moveCoordinates {
-    char x;
-    char y;
-};
+typedef struct moveCoordinates {
+    int x;
+    int y;
+} moveCoordinates;
 
 void gameQueue();
 
@@ -19,12 +19,12 @@ struct moveCoordinates getPlayerMove();
 
 void completeMove(struct moveCoordinates coordinates, int playerNumber, char *board);
 
-bool gameContinues(const char board[]);
+bool gameContinues(gameBoard board);
 
-bool lineWin(const char *board);
+bool lineWin(gameBoard board);
 
-bool columnWin(const char *board);
+bool columnWin(gameBoard board);
 
-bool diagonalWin(const char *board);
+bool diagonalWin(gameBoard board);
 
 #endif //TIC_TAC_TOE_GAME_H

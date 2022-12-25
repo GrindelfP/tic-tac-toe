@@ -67,6 +67,12 @@ build CMakeFiles/tic_tac_toe.dir/game.c.o: C_COMPILER__tic_tac_toe_Debug /home/g
   OBJECT_DIR = CMakeFiles/tic_tac_toe.dir
   OBJECT_FILE_DIR = CMakeFiles/tic_tac_toe.dir
 
+build CMakeFiles/tic_tac_toe.dir/gameUtility.c.o: C_COMPILER__tic_tac_toe_Debug /home/gregory/MEGA/programming/c/tic_tac_toe/gameUtility.c || cmake_object_order_depends_target_tic_tac_toe
+  DEP_FILE = CMakeFiles/tic_tac_toe.dir/gameUtility.c.o.d
+  FLAGS = -g -fcolor-diagnostics -std=gnu11
+  OBJECT_DIR = CMakeFiles/tic_tac_toe.dir
+  OBJECT_FILE_DIR = CMakeFiles/tic_tac_toe.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target tic_tac_toe
@@ -75,7 +81,7 @@ build CMakeFiles/tic_tac_toe.dir/game.c.o: C_COMPILER__tic_tac_toe_Debug /home/g
 #############################################
 # Link the executable tic_tac_toe
 
-build tic_tac_toe: C_EXECUTABLE_LINKER__tic_tac_toe_Debug CMakeFiles/tic_tac_toe.dir/main.c.o CMakeFiles/tic_tac_toe.dir/communication.c.o CMakeFiles/tic_tac_toe.dir/game.c.o
+build tic_tac_toe: C_EXECUTABLE_LINKER__tic_tac_toe_Debug CMakeFiles/tic_tac_toe.dir/main.c.o CMakeFiles/tic_tac_toe.dir/communication.c.o CMakeFiles/tic_tac_toe.dir/game.c.o CMakeFiles/tic_tac_toe.dir/gameUtility.c.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/tic_tac_toe.dir
   POST_BUILD = :
