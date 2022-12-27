@@ -11,7 +11,7 @@ void gameQueue() {
         visualizeBoard(board);
         printf("\nNow, Player TWO! Make your move: ");
         struct moveCoordinates coordinatesB = getPlayerMove();
-        updateBoard(board, coordinatesB, 0);
+        updateBoard(board, coordinatesB, 1);
         printf("\nAlea iacta est!\n");
     }
 }
@@ -20,8 +20,8 @@ struct moveCoordinates getPlayerMove() {
     struct moveCoordinates coordinates;
     char input[2];
     scanf("%s", input);
-    coordinates.x = input[0] - '0';
-    coordinates.y = input[1] - '0';
+    coordinates.x = input[0] - '0' - 1;
+    coordinates.y = input[1] - '0' - 1;
 
     return coordinates;
 }
