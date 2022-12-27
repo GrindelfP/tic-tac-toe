@@ -3,16 +3,19 @@
 void gameQueue() {
     printGreetings();
     struct gameBoard board = initBoard();
+    bool playerAMadeMove = false;
+    int playerNumber;
     while (gameContinues(board)) {
         visualizeBoard(board);
+        //add next message to getPlayerMove
         printf("\nPlayer ONE! Make your move: ");
         struct moveCoordinates coordinatesA = getPlayerMove();
-        board = updateBoard(board, coordinatesA, 0);
-        visualizeBoard(board);
-        printf("\nNow, Player TWO! Make your move: ");
-        struct moveCoordinates coordinatesB = getPlayerMove();
-        board = updateBoard(board, coordinatesB, 1);
+        if (playerAMadeMove) playerNumber = 1; // 0 is for A player, 1 - for B
+        else playerNumber = 0;
+        board = updateBoard(board, coordinatesA, playerNumber);
         printf("\nAlea iacta est!\n");
+        if (playerAMadeMove) playerAMadeMove = false;
+        else playerAMadeMove = true;
     }
 }
 
