@@ -5,10 +5,12 @@ void gameQueue() {
     struct gameBoard board = initBoard();
     while (gameContinues(board)) {
         visualizeBoard(board);
+        //printf("\nInput name");
         printf("\nPlayer ONE! Make your move: ");
         struct moveCoordinates coordinatesA = getPlayerMove();
         updateBoard(board, coordinatesA, 0);
         visualizeBoard(board);
+        //printf("\nInput name");
         printf("\nNow, Player TWO! Make your move: ");
         struct moveCoordinates coordinatesB = getPlayerMove();
         updateBoard(board, coordinatesB, 1);

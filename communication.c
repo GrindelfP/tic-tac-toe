@@ -2,9 +2,14 @@
 
 void printGreetings() {
     char greeting[100] = "hello deer friend";
-    char rules[100] = "";
+    char rules[220] = "Rules of the game: there are two players A (playing for \"O\") and B (playing for \"X\"), "
+                      "they take turns marking the cells on the field with their icons. "
+                      "The winner is the player who first puts three of his icons in a row.";
+    char rulesOfInput[200] = "You have to input a couple of numbers. "
+                             "Example 23, where 2 is a row, 3 is a column.";
     printf("%s\n", greeting);
-    printf("%s", rules);
+    printf("%s\n", rules);
+    printf("%s\n", rulesOfInput);
     printf("Let us begin!");
 }
 
@@ -21,3 +26,7 @@ void visualizeBoard(struct gameBoard board) {
         if (j == 1) boardLine = board.lineThree;
     }
 }
+void gameRules(){
+
+}
+//Правила игры:\nЕсть два игрока A(играет за "0") и B
