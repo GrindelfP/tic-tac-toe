@@ -7,9 +7,9 @@ struct moveCoordinates {
 };
 
 struct gameBoard {
-    char *lineOne;
-    char *lineTwo;
-    char *lineThree;
+    char lineOne[3];
+    char lineTwo[3];
+    char lineThree[3];
 };
 
 #endif //TIC_TAC_TOE_GAME_STRUCTS_H

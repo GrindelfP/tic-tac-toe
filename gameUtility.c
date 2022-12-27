@@ -2,16 +2,18 @@
 
 struct gameBoard initBoard() {
     struct gameBoard board;
-    board.lineOne = EMPTY_BOARD_LINE;
-    board.lineTwo = EMPTY_BOARD_LINE;
-    board.lineThree = EMPTY_BOARD_LINE;
+    for (int i = 0; i < 3; ++i) {
+        board.lineOne[i] = EMPTY_SYMBOL;
+        board.lineTwo[i] = EMPTY_SYMBOL;
+        board.lineThree[i] = EMPTY_SYMBOL;
+    }
 
     return board;
 }
 
 struct gameBoard updateBoard(struct gameBoard board, struct moveCoordinates coordinates, int playerNumber) {
-    if (coordinates.y == 1) board.lineOne[coordinates.x] = playersSymbol(playerNumber);
-    else if (coordinates.y == 2) board.lineTwo[coordinates.x] = playersSymbol(playerNumber);
+    if (coordinates.y == 0) board.lineOne[coordinates.x] = playersSymbol(playerNumber);
+    else if (coordinates.y == 1) board.lineTwo[coordinates.x] = playersSymbol(playerNumber);
     else board.lineThree[coordinates.x] = playersSymbol(playerNumber);
 
     return board;
