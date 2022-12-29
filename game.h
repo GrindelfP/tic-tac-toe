@@ -7,15 +7,6 @@
 #include "gameStructs.h"
 
 void gameQueue();
-
-struct moveCoordinates getPlayerMove();
-
 bool gameContinues(struct gameBoard board);
-
-bool lineWin(struct gameBoard board);
-
-bool columnWin(struct gameBoard board);
-
-bool diagonalWin(struct gameBoard board);
 
 #endif //TIC_TAC_TOE_GAME_H

@@ -21,3 +21,15 @@ void visualizeBoard(struct gameBoard board) {
         if (j == 1) boardLine = board.lineThree;
     }
 }
+
+struct moveCoordinates getPlayerMove(int playerNumber) {
+    if (playerNumber == 0) printf("\nPlayer ONE! Make your move: ");
+    else printf("\nPlayer TWO! Make your move: ");
+    struct moveCoordinates coordinates;
+    char input[2];
+    scanf("%s", input);
+    coordinates.y = input[0] - '0' - 1;
+    coordinates.x = input[1] - '0' - 1;
+
+    return coordinates;
+}

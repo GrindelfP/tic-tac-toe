@@ -1,3 +1,0 @@
-/home/gregory/MEGA/programming/c/tic_tac_toe/cmake-build-debug/CMakeFiles/tic_tac_toe.dir
-/home/gregory/MEGA/programming/c/tic_tac_toe/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/gregory/MEGA/programming/c/tic_tac_toe/cmake-build-debug/CMakeFiles/rebuild_cache.dir
