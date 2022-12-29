@@ -13,5 +13,6 @@ char playersSymbol(int number);
 bool lineWin(struct gameBoard board);
 bool columnWin(struct gameBoard board);
 bool diagonalWin(struct gameBoard board);
+bool coordinatesAreValid(struct moveCoordinates coordinates);
 
 #endif //TIC_TAC_TOE_GAME_UTILITY_H

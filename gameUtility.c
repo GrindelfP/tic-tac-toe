@@ -55,3 +55,7 @@ bool diagonalWin(struct gameBoard board) {
 
     return gameWon;
 }
+
+bool coordinatesAreValid(struct moveCoordinates coordinates) {
+    return 0;
+}

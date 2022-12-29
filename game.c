@@ -9,8 +9,12 @@ void gameQueue() {
         if (playerAMadeMove) playerNumber = 1; // 0 is for A player, 1 - for B
         else playerNumber = 0;
         visualizeBoard(board);
-        struct moveCoordinates coordinatesA = getPlayerMove(playerNumber);
-        board = updateBoard(board, coordinatesA, playerNumber);
+        struct moveCoordinates coordinates;
+        while (true) {
+            coordinates = getPlayerMove(playerNumber);
+            if (coordinatesAreValid(coordinates)) break;
+        }
+        board = updateBoard(board, coordinates, playerNumber);
         printf("\nAlea iacta est!\n");
         if (playerAMadeMove) playerAMadeMove = false;
         else playerAMadeMove = true;
