@@ -42,7 +42,7 @@ struct moveCoordinates getPlayerMove(int playerNumber) {
 void printCongratulations(int playerNumber) {
     char player;
     player = playerNumber == 0 ? 'A' : 'B';
-    printf("Congratulations, player %c, you've won this game! \nGood bye!", player);
+    printf("\nCongratulations, player %c, you've won this game! \nGood bye!", player);
 }
 
 // for further localisation:
