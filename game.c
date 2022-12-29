@@ -10,15 +10,20 @@ void gameQueue() {
         else playerNumber = 0;
         visualizeBoard(board);
         struct moveCoordinates coordinates;
+/*
         while (true) {
             coordinates = getPlayerMove(playerNumber);
             if (coordinatesAreValid(coordinates, board)) break;
         }
+*/
+        coordinates = getPlayerMove(playerNumber);
+
         board = updateBoard(board, coordinates, playerNumber);
         printf("\nAlea iacta est!\n");
         if (playerAMadeMove) playerAMadeMove = false;
         else playerAMadeMove = true;
     }
+    printCongratulations(playerNumber);
 }
 
 bool gameContinues(struct gameBoard board) {

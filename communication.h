@@ -7,5 +7,6 @@
 void printGreetings();
 void visualizeBoard(struct gameBoard board);
 struct moveCoordinates getPlayerMove(int playerNumber);
+void printCongratulations(int playerNumber);
 
 #endif //TIC_TAC_TOE_COMMUNICATION_H
