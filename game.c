@@ -12,7 +12,7 @@ void gameQueue() {
         struct moveCoordinates coordinates;
         while (true) {
             coordinates = getPlayerMove(playerNumber);
-            if (coordinatesAreValid(coordinates)) break;
+            if (coordinatesAreValid(coordinates, board)) break;
         }
         board = updateBoard(board, coordinates, playerNumber);
         printf("\nAlea iacta est!\n");
