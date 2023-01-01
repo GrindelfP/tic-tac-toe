@@ -39,6 +39,12 @@ struct moveCoordinates getPlayerMove(int playerNumber) {
     return coordinates;
 }
 
+void printCongratulations(int playerNumber) {
+    char player;
+    player = playerNumber == 0 ? 'A' : 'B';
+    printf("\nCongratulations, player %c, you've won this game! \nGood bye!", player);
+}
+
 void printDrawMessage() {
     char drawMessage[83] = "Your game ended in a draw... \nMaybe, someone will be luckier next time... Good bye!";
     printf("%s", drawMessage);
