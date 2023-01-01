@@ -45,5 +45,10 @@ void printCongratulations(int playerNumber) {
     printf("\nCongratulations, player %c, you've won this game! \nGood bye!", player);
 }
 
+void printDrawMessage() {
+    char drawMessage[83] = "Your game ended in a draw... \nMaybe, someone will be luckier next time... Good bye!";
+    printf("%s", drawMessage);
+}
+
 // for further localisation:
 //Правила игры:\nЕсть два игрока A(играет за "0") и B
