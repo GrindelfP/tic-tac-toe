@@ -14,11 +14,11 @@ struct gameBoard updateBoard(struct gameBoard board, struct moveCoordinates coor
 
 char playersSymbol(int number);
 
-bool lineWin(struct gameBoard board);
+bool lineVictory(struct gameBoard board);
 
-bool columnWin(struct gameBoard board);
+bool columnVictory(struct gameBoard board);
 
-bool diagonalWin(struct gameBoard board);
+bool diagonalVictory(struct gameBoard board);
 
 bool coordinatesAreValid(struct moveCoordinates coordinates, struct gameBoard board);
 
