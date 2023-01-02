@@ -14,10 +14,11 @@ void printGreetings() {
 }
 
 void visualizeBoard(struct gameBoard board) {
+    EMPTY_LINE;
     int i, j;
     char *boardLine = board.lineOne;
     for (j = 0; j < 3; ++j) {
-        printf("\n");
+        EMPTY_LINE;
         for (i = 0; i < 3; ++i) {
             printf("%c", boardLine[i]);
             if (i != 2) printf(" ");
@@ -25,13 +26,24 @@ void visualizeBoard(struct gameBoard board) {
         if (j == 0) boardLine = board.lineTwo;
         if (j == 1) boardLine = board.lineThree;
     }
+    EMPTY_LINE;
+}
+
+struct moveCoordinates getFinalMove(int playerNumber, struct gameBoard board) {
+    struct moveCoordinates coordinates = getPlayerMove(playerNumber);
+    while (!coordinatesAreValid(coordinates, board)) {
+        printf("Coordinates you've entered are not correct");
+        coordinates = getPlayerMove(playerNumber);
+    }
+
+    return coordinates;
 }
 
 struct moveCoordinates getPlayerMove(int playerNumber) {
     if (playerNumber == 0) printf("\nPlayer ONE! Make your move: ");
     else printf("\nPlayer TWO! Make your move: ");
     struct moveCoordinates coordinates;
-    char input[2];
+    char input[COORDINATES_INPUT_LENGTH];
     scanf("%s", input);
     coordinates.y = input[0] - '0' - 1;
     coordinates.x = input[1] - '0' - 1;
@@ -39,15 +51,13 @@ struct moveCoordinates getPlayerMove(int playerNumber) {
     return coordinates;
 }
 
-void printCongratulations(int playerNumber) {
-    char player;
-    player = playerNumber == 0 ? 'A' : 'B';
-    printf("\nCongratulations, player %c, you've won this game! \nGood bye!", player);
+void printCongratulations(player currentPlayer) {
+    char playerName = currentPlayer == 0 ? 'A' : 'B';
+    printf("\nCongratulations, player %c, you've won this game! \nGood bye!", playerName);
 }
 
 void printDrawMessage() {
-    char drawMessage[83] = "Your game ended in a draw... \nMaybe, someone will be luckier next time... Good bye!";
-    printf("%s", drawMessage);
+    printf("\nYour game ended in a draw... \nMaybe, someone will be luckier next time... Good bye!\n");
 }
 
 // for further localisation:

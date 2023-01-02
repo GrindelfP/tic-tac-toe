@@ -5,8 +5,10 @@
 #include "communication.h"
 #include "gameUtility.h"
 #include "gameStructs.h"
+#include "gameDescription.h"
 
 void gameQueue();
-bool gameContinues(struct gameBoard board);
+
+game_stage gameStageIs(struct gameBoard board);
 
 #endif //TIC_TAC_TOE_GAME_H
