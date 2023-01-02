@@ -57,5 +57,20 @@ bool diagonalWin(struct gameBoard board) {
 }
 
 bool coordinatesAreValid(struct moveCoordinates coordinates, struct gameBoard board) {
-    return 0;
+    bool validness = false;
+    if ((coordinates.x + coordinates.y) >= DOUBLE_MIN_COORDINATE_VALUE &&
+        (coordinates.x + coordinates.y) <= DOUBLE_MAX_COORDINATE_VALUE) {
+        switch (coordinates.y) {
+            case 0:
+                if (board.lineOne[coordinates.x] == '*') validness = true;
+                break;
+            case 1:
+                if (board.lineTwo[coordinates.x] == '*') validness = true;
+                break;
+            default:
+                if (board.lineThree[coordinates.x] == '*') validness = true;
+                break;
+        }
+    }
+    return validness;
 }
