@@ -1,7 +1,6 @@
 #include "game.h"
 
 void gameQueue() {
-    printGreetings();
     struct gameBoard board = initBoard();
     visualizeBoard(board);
     bool playerOneMadeMove = false;

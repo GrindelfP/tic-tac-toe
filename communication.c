@@ -2,11 +2,12 @@
 
 void printGreetings() {
     char greeting[100] = "hello deer friend";
-    char rules[222] = "Rules of the game: there are two players A (playing for \"O\") and B (playing for \"X\"), "
-                      "\nthey take turns marking the cells on the field with their icons. "
+    char rules[223] = "Rules of the game: there are two players A (playing with \"O\") and B (playing with \"X\"). "
+                      "\nThey take turns marking the cells on the field with their icons. "
                       "\nThe winner is the player who first puts three of his icons in a row.";
-    char rulesOfInput[200] = "You have to input a couple of numbers. "
-                             "\nExample: 23, where 2 is a row, 3 is a column.";
+    char rulesOfInput[200] = "You have to input a coordinate for yor move in similar form: letter, number "
+                             "\nwith no spaces or another dividers between them."
+                             "\nExample: b3 (or B3), where b (or B) is a row number 2 and 3 is a column.";
     printf("%s\n", greeting);
     printf("%s\n", rules);
     printf("%s\n", rulesOfInput);
@@ -44,8 +45,8 @@ struct moveCoordinates getPlayerMove(int playerNumber) {
     else printf("\nPlayer TWO! Make your move: ");
     struct moveCoordinates coordinates;
     char input[COORDINATES_INPUT_LENGTH];
-    scanf("%s", input);
-    coordinates.y = input[0] - '0' - 1;
+    getPlayerInput(input, COORDINATES_INPUT_LENGTH);
+    coordinates.y = getRowNumber(input[0]);
     coordinates.x = input[1] - '0' - 1;
 
     return coordinates;
