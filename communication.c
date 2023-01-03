@@ -5,9 +5,12 @@ void printGreetings() {
     char rules[223] = "Rules of the game: there are two players A (playing with \"O\") and B (playing with \"X\"). "
                       "\nThey take turns marking the cells on the field with their icons. "
                       "\nThe winner is the player who first puts three of his icons in a row.";
-    char rulesOfInput[200] = "You have to input a coordinate for yor move in similar form: letter, number "
+    char rulesOfInput[300] = "You have to input a coordinate for yor move in similar form: letter, number "
                              "\nwith no spaces or another dividers between them."
-                             "\nExample: b3 (or B3), where b (or B) is a row number 2 and 3 is a column.";
+                             "\nExample: b3 (or B3), where b (or B) is a row number 2 and 3 is a column."
+                             "\nIf you will put incorrect coordinates you will be warned about that and"
+                             "\nasked to remake your move.";
+
     printf("%s\n", greeting);
     printf("%s\n", rules);
     printf("%s\n", rulesOfInput);
